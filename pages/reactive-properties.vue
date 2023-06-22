@@ -25,18 +25,6 @@
         </li>
       </ul>
     </div>
-
-    <div class="space-y-2 bg-gray-100 p-4 rounded shadow">
-      <h3 class="text-xl font-semibold">Reactive vs Ref:</h3>
-      <p>Username: {{ user.name }}</p>
-      <p>Age: {{ user.age }} years old</p>
-      <button
-        @click="birthday"
-        class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Celebrate Birthday
-      </button>
-    </div>
   </section>
 </template>
 
@@ -51,16 +39,10 @@ const addedNumbers = computed(() => {
 });
 
 watch([numberOne, numberTwo], () => {
-  messages.value.push(
-    `numberOne changed to ${numberOne.value}, numberTwo changed to ${numberTwo.value}`
-  );
+  // messages.value.push(
+  //   `numberOne changed to ${numberOne.value}, numberTwo changed to ${numberTwo.value}`
+  // );
 });
-
-const user = reactive({ name: "John", age: 30 });
-
-function birthday() {
-  user.age++;
-}
 </script>
 
 <style scoped></style>
